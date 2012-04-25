@@ -1,7 +1,9 @@
 {
 	"name" : "Zzz",
 	"description" : "Lightweight REST service container",
-	"author" : "Andrew Vayanis",
-  	"main" : "./z.js",
   	"version" : "0.1.1"
+	"author" : "Andrew Vayanis",
+  	"homepage" : "https://github.com/avayanis/Zzz",
+  	"bugs" : "https://github.com/avayanis/Zzz/issues",
+  	"main" : "./z.js",
 }
