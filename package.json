@@ -2,5 +2,6 @@
 	"name" : "Zzz",
 	"description" : "Lightweight REST service container",
 	"author" : "Andrew Vayanis",
-  	"main" : "./z.js"
+  	"main" : "./z.js",
+  	"version" : "0.1"
 }
