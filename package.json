@@ -3,5 +3,5 @@
 	"description" : "Lightweight REST service container",
 	"author" : "Andrew Vayanis",
   	"main" : "./z.js",
-  	"version" : "0.1"
+  	"version" : "0.1.1"
 }
