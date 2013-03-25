@@ -1,3 +1,4 @@
 *.settings
 .project
+coverage.html
 node_modules
