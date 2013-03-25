@@ -1,9 +1,13 @@
 {
 	"name" : "Zzz",
 	"description" : "Lightweight REST service container",
-  	"version" : "0.1.1",
+  	"version" : "0.2.0",
 	"author" : "Andrew Vayanis",
   	"homepage" : "https://github.com/avayanis/Zzz",
   	"bugs" : "https://github.com/avayanis/Zzz/issues",
-  	"main" : "./z.js"
+  	"main" : "./lib/z.js",
+	"devDependencies" : {
+		"mocha" : "1.8.1",
+		"should" : "1.2.2"
+	}
 }
