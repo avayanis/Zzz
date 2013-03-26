@@ -65,13 +65,16 @@ server.post("/some/:dynamic/path", function(request, response, uriParams) {
 		response.end("<pre>" + postBody + "</pre>");
 	});
 });
+```
 
 ## Run Tests
+
 ``` bash
 $ make test
 ```
 
 ### Code Coverage Report
+
 ``` bash
 $ make coverage
 ```
