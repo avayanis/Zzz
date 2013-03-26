@@ -79,5 +79,7 @@ $ make test
 $ make coverage
 ```
 
+**Note:** The code coverage report depends on having jscoverage installed.
+
 #### License: MIT
 #### Author: [Andrew Vayanis](http://github.com/avayanis)
