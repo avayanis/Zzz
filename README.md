@@ -7,7 +7,7 @@ Zzz is a Lightweight Node.js REST Framework - Currently, Zzz supports the follow
 ## Installation
 
 ``` bash
-$ npm install Zzz
+$ npm install zzz
 ```
 
 ## Usage
