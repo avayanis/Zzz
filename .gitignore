@@ -1,4 +1,12 @@
-*.settings
+# Sublime
 .project
+*.settings
+
+# JetBrains
+.idea
+
+# Code coverage
 coverage.html
+
+# NPM
 node_modules
