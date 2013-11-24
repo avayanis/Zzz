@@ -1,7 +1,7 @@
 {
 	"name" : "zzz",
 	"description" : "Lightweight REST service container",
-  	"version" : "0.2.0",
+  	"version" : "0.3.0",
 	"author" : "Andrew Vayanis",
   	"homepage" : "https://github.com/avayanis/Zzz",
   	"bugs" : "https://github.com/avayanis/Zzz/issues",
