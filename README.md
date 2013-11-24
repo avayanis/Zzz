@@ -1,57 +1,85 @@
-Zzz
-===
+# Zzz
 
 Zzz is a Lightweight Node.js REST Framework - Currently, Zzz supports the following http request methods: GET, POST, PUT, and DELETE.
 
-Installation
-============
+[![Build Status](https://travis-ci.org/avayanis/Zzz.png)](https://travis-ci.org/avayanis/Zzz)
 
-npm install Zzz
+## Installation
 
-Getting Started
-===============
+``` bash
+$ npm install zzz
+```
 
-	// Load Zzz module and create a server instance
-	var z = require("Zzz"),
-		querystring = require("querystring"),
-		server = z.createServer();
+## Usage
 
-	// Define request handlers
-	server.get("/some/static/path", function(request, response) {
-		
-		// do something here
-		response.end("hello world");
+### Getting Started
 
-	});
+``` javascript
+// Load Zzz module and create a server instance
+var Zzz = require("zzz");
 
-	server.post("/some/static/path", function(request, response) {
-		
-		request.content = "";
+// Create a new Zzz server
+var server = new Zzz.Server();
 
-		// do something with post params here
-		request.on("data", function(chunk) {
-			request.content += chunk;
-		});
+// Define a GET request
+server.get("/my/route", function(request, response) {
+	response.end("Hello World, I serve GET requests!")
+});
 
-		request.on("end", function() {
-			var postBody = querystring.parse(request.content);
-			response.end("<pre>" + postBody + "</pre>");
-		});
+// Define a POST request
+server.post("/my/route", function(request, response) {
+	response.end("Hello World, I serve POST requests!")
+});
 
-	});
+// Start listening for requests
+server.listen(80);
+```
 
-	server.get("/some/:dynamic/path", function(request, response, uriParams){
-	
-		// do something here.
-		response.end("hello world.  This was " + uriParams.dynamic);
-
-	});
-
-Routing
-=======
-
+### Routing
 Routes are defined by assigning a callback to a http request method and request path:
 
-	server.[get|post|put|delete]("/some/path", callback);
+``` javascript
+server.[get|post|put|delete]("/some/path", callback);
+
+server.get("/some/static/path", function(request, response) {
+	// do something here
+	response.end("I did something.");
+});
+
+```
 
 Zzz will always pass http.serverRequest and http.serverResponse objects to the callback.  However, if there are dynamic path segments denoted by a ':', these will be passed via an object of key/value pairs as the third argument to the callback.
+
+``` javascript
+server.post("/some/:dynamic/path", function(request, response, uriParams) {
+	var body = "";
+	
+	// do something with post params here
+	request.on("data", function(chunk) {
+		body += chunk;
+	});
+
+	request.on("end", function() {
+		var postBody = querystring.parse(body);
+		response.write("<p>I was" + uriParams.dynamic + "</p>");
+		response.end("<pre>" + postBody + "</pre>");
+	});
+});
+```
+
+## Run Tests
+
+``` bash
+$ make test
+```
+
+### Code Coverage Report
+
+``` bash
+$ make coverage
+```
+
+**Note:** The code coverage report depends on having jscoverage installed.
+
+#### License: MIT
+#### Author: [Andrew Vayanis](http://github.com/avayanis)
