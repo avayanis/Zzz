@@ -1,3 +1,5 @@
+var should = require('should');
+
 if (process.env.HTML_COVERAGE) {
     libpath = __dirname + "/../lib-cov"
 } else {
